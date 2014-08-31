@@ -26,10 +26,12 @@
 <body>
 <div id="chart_div" style="width: 900px; height: 500px;"></div>
 
-<pre>
-    {{range .Stars}}
-    {{.FullName}}
-    {{end}}
-</pre>
+<table>
+{{range .Stars}}
+<tr>
+<td>{{.Language}}</td><td>{{.StargazersCount}}</td><td>{{.FullName}}</td><td>{{.UpdatedAt}}</td>
+</tr>
+{{end}}
+</table>
 </body>
 </html>
