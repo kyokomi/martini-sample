@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/kyokomi/github-star",
+	"ImportPath": "github.com/KyokomiSandbox/martini-sample",
 	"GoVersion": "go1.3.1",
 	"Deps": [
 		{

@@ -1,1 +1,1 @@
-web: github-star
+web: martini-sample

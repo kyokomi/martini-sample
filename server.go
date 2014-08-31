@@ -1,45 +1,15 @@
 package main
 
 import (
-	"io/ioutil"
 	"log"
-	"net/http"
-
-	"encoding/json"
-	"fmt"
 
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 )
 
-const (
-	gitHubStarUrl = "https://api.github.com/users/%s/starred"
-)
+func doMain(_ *log.Logger, r render.Render) {
 
-type ChartResponse struct {
-	Stars []Starred
-}
-
-func doStarChart(_ *log.Logger, r render.Render) {
-
-	res, err := http.Get(fmt.Sprintf(gitHubStarUrl, "kyokomi"))
-	if err != nil {
-		r.Error(400)
-	}
-
-	data, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		r.Error(400)
-	}
-
-	var stars []Starred
-	if err := json.Unmarshal(data, &stars); err != nil {
-		r.Error(400)
-	}
-
-	r.HTML(200, "index", ChartResponse{
-		Stars: stars,
-	})
+	r.HTML(200, "index", nil)
 }
 
 func main() {
@@ -50,7 +20,7 @@ func main() {
 	}))
 
 	// Router
-	m.Get("/", doStarChart)
+	m.Get("/", doMain)
 
 	m.Run()
 }
