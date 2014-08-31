@@ -1,4 +1,6 @@
-# GitHub StarChart
+# Martini Sample
+
+template
 
 ===================================
 
@@ -12,7 +14,7 @@ coming soon...
 
 ## License
 
-[MIT](https://github.com/kyokomi/github-star/blob/master/LICENSE)
+[MIT]()
 
 ## Author
 
